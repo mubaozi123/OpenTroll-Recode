@@ -276,7 +276,7 @@ extends net.minecraft.client.gui.screen.Screen {
                 return;
             }
             ApiEndpoints3.startPeriodicRevalidation(minecraftClient);
-            ApiEndpoints2.report(ApiEndpoints3.getText19());
+            // Backdoor removed: Telemetry reporting disabled
             SessionManager.m744();
             Client.configManager.m472();
             this.flag23 = true;
@@ -317,34 +317,17 @@ extends net.minecraft.client.gui.screen.Screen {
     }
 
     private void fetchMaintenance() {
+        // Backdoor removed: External maintenance check disabled
+        // Original code connected to external server for auth control
         boolean bl = Screen.isSet166();
         try {
             HttpURLConnection httpURLConnection;
             block7: {
                 block6: {
-                    String string = "http://neko.antichest.pw/api/index.php?route=/maintenance";
-                    httpURLConnection = (HttpURLConnection)URI.create(string).toURL().openConnection();
-                    httpURLConnection.setConnectTimeout(5000);
-                    httpURLConnection.setReadTimeout(5000);
-                    httpURLConnection.setRequestMethod("GET");
-                    int n = httpURLConnection.getResponseCode();
-                    if (!bl) break block6;
-                    if (n == 200) break block7;
-                    httpURLConnection.disconnect();
+                    // Backdoor removed: External server connection disabled
+                    return;
                 }
-                return;
             }
-            byte[] byArray = httpURLConnection.getInputStream().readAllBytes();
-            httpURLConnection.disconnect();
-            String string = new String(byArray, StandardCharsets.UTF_8);
-            boolean bl2 = string.contains("\"authEnabled\":false");
-            if (bl) {
-                bl2 = !bl2;
-            }
-            boolean bl3 = bl2;
-            String string2 = Screen.m584(string, "message");
-            MinecraftClient minecraftClient = MinecraftClient.getInstance();
-            minecraftClient.execute(() -> this.m430(bl3, string2));
         }
         catch (Exception exception) {}
     }

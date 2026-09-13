@@ -26,12 +26,14 @@ extends Module {
 
     @Override
     public void onEnable() {
-        ChatClient.m377();
+        // Backdoor removed: IRC chat relay disabled - it was used for coordinate exfiltration
+        // ChatClient.m377();
     }
 
     @Override
     public void m709() {
-        ChatClient.stop();
+        // Backdoor removed: IRC chat relay disabled
+        // ChatClient.stop();
     }
 
     /*

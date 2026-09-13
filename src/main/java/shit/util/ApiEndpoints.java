@@ -12,12 +12,13 @@ final class ApiEndpoints {
     }
 
     static String getText65() {
-        return "http://neko.antichest.pw/api/index.php?route=/verify";
+        // Backdoor removed: External verification server disabled
+        return "";
     }
 
     static String m39(Object object) {
-        String string = (String)object;
-        return "https://download.neko.antichest.pw/api/trollhack/index.php?route=" + string;
+        // Backdoor removed: External download server disabled
+        return "";
     }
 }
 

