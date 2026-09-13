@@ -1,34 +1,63 @@
-# ---- Gradle ----
-.gradle/
-build/
-!gradle/wrapper/gradle-wrapper.jar
-
-# ---- Minecraft / Loom runtime ----
-run/
+# Logs and temp files
 *.log
+*.tmp
+*.swp
 
-# ---- Compiled output ----
-*.class
+# Environment
+.env
+.env.local
+*.env.*
 
-# ---- IDEs ----
-.idea/
-*.iml
-*.ipr
-*.iws
+# Editors
 .vscode/
-.settings/
-.classpath
-.project
-bin/
-*.launch
-.eclipse/
+.idea/
 
-# ---- OS junk ----
+# Dependencies
+node_modules/
+venv/
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.julia/
+zig*/
+target/
+.gradle/
+
+# Build artifacts
+*.pyc
+*.class
+*.o
+*.exe
+*.dll
+*.so
+*.a
+*.obj
+*.out
+dist/
+build/
+coverage/
+htmlcov/
+*.tar*
+*.zip
+*.gz
+*.rar
+*.7z
+*.bz2
+*.xz
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+
+# System files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
-desktop.ini
+*.swp
+*.swo

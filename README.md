@@ -1,4 +1,4 @@
-# OpenTroll-Recode
+# Solstice
 
 > 把 TrollHack(自称 "Oa7h EXTREME" 的 ZKM 混淆)从字节码里一坨一坨抠出来、重建成能编译能启动能玩的 Fabric 工程。
 >
